@@ -5,15 +5,14 @@
 #
 # Solution, exponentiation [exp(x)], it ALWAYS gives +ve output, even for -ve numbers, so we do have a scale with info now!
 
-import math
+import numpy as np
 
 layer_outputs = [4.8, 1.21, 2.385]
 
 # Exponentiation
-exp_values = [math.e ** x for x in layer_outputs]
+exp_values = np.exp(layer_outputs)
 print(exp_values)
 
 # Normalize them
-norm_base = sum(exp_values)
-norm_values = [x / norm_base for x in exp_values]
+norm_values = exp_values / np.sum(exp_values)
 print(norm_values, sum(norm_values))
