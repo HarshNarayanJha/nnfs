@@ -9,6 +9,11 @@ import math
 
 layer_outputs = [4.8, 1.21, 2.385]
 
+# Exponentiation
 exp_values = [math.e ** x for x in layer_outputs]
-
 print(exp_values)
+
+# Normalize them
+norm_base = sum(exp_values)
+norm_values = [x / norm_base for x in exp_values]
+print(norm_values, sum(norm_values))
